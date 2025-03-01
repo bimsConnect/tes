@@ -1,0 +1,16 @@
+model Blog {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  image     Bytes?    // Kolom untuk menyimpan binary data gambar
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
